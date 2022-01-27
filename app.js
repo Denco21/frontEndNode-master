@@ -65,7 +65,14 @@ app.get("/posts/:postName", (req, res) => {
 
 });
 
-
+app.post("/compose", (req, res) =>{
+  let post = {
+      title: req.body.postTitle,
+      content: req.body.postBody,
+  };
+  posts.push(post);
+  res.redirect("/");
+});
 
 
 
